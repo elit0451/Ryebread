@@ -35,6 +35,19 @@ namespace Ryebread
             //Degrees();
             #endregion
 
+            #region Flow control
+            //PositiveOrNegative();
+            //MultiplyIfNotZero();
+            //DivideIfNotZero();
+            //DisplayTheGreatestNumber();
+            //RepeatUntilSomeoneEntersZero();
+            //RepeatUntilSomeoneEntersZeroPartTwo();
+            //Counter();
+            //TimesTable();
+            //OddNumbersDescending();
+            //DisplaySum();
+            #endregion
+
         }
 
         #region First contact with C#
@@ -107,7 +120,7 @@ namespace Ryebread
             int number = 0;
             Console.Write("Enter a number: ");
             number = Convert.ToInt32(Console.ReadLine());
-            for(int i = 1; i<=10; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine("{0} * {1} = {2}", number, i, number * i);
             }
@@ -145,8 +158,8 @@ namespace Ryebread
             b = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter the third number: ");
             c = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("({0} + {1}) * {2} = {3}", a, b, c, ( a + b ) * c);
-            Console.WriteLine("{0} * {1} + {2} * {1} = {3}", a, c,b, a * c + b * c);
+            Console.WriteLine("({0} + {1}) * {2} = {3}", a, b, c, (a + b) * c);
+            Console.WriteLine("{0} * {1} + {2} * {1} = {3}", a, c, b, a * c + b * c);
         }
 
         public void AskForAge()
@@ -162,7 +175,7 @@ namespace Ryebread
             int number = 0;
             Console.Write("Enter a number: ");
             number = Convert.ToInt32(Console.ReadLine());
-            
+
             //n n n n
             Console.Write(number);
             Console.Write(" ");
@@ -174,7 +187,7 @@ namespace Ryebread
             Console.Write(" ");
 
             Console.WriteLine();
-            
+
             //nnnn
             Console.Write(number);
             Console.Write(number);
@@ -218,10 +231,176 @@ namespace Ryebread
             fahrenheit = celsius * 18 / 10 + 32;
             Console.WriteLine("Kelvin -> {0}", kelvin);
             Console.WriteLine("Fahrenheit -> {0}", fahrenheit);
-
-
         }
         #endregion
 
-    }
+        #region Flow control
+        public void PositiveOrNegative()
+        {
+            Console.Write("Write a number you want to check for being positive or negative: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            if (number < 0)
+            {
+                Console.WriteLine("Negative");
+            }
+            else
+            {
+                Console.WriteLine("Positive");
+            }
+        }
+
+        public void MultiplyIfNotZero()
+        {
+            Console.Write("Enter a number: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+
+            if (a != 0)
+            {
+                Console.Write("Enter another number: ");
+                int b = Convert.ToInt32(Console.ReadLine());
+                int product = a * b;
+                Console.WriteLine("The result from multiplying {0} with {1} is {2}", a, b, product);
+            }
+            else
+            {
+                Console.WriteLine(0);
+            }
+        }
+
+        public void DivideIfNotZero()
+        {
+            int a = 0;
+            int b = 0;
+            int division = 0;
+
+            Console.Write("Enter a number: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a number you want to divide the first one: ");
+            b = Convert.ToInt32(Console.ReadLine());
+
+            if (b != 0)
+            {
+                division = a / b;
+                Console.WriteLine("The division of {0} and {1} is {2}", a, b, division);
+            }
+            else
+            {
+                Console.WriteLine("I cannot divide!");
+            }
+
+
+        }
+
+        public void DisplayTheGreatestNumber()
+        {
+            int a = 0;
+            int b = 0;
+            int c = 0;
+
+            Console.Write("Write first number: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Write second number: ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Write third number: ");
+            c = Convert.ToInt32(Console.ReadLine());
+
+            if (a > b && a > c)
+            {
+                Console.WriteLine("\n{0} is the greatest!", a);
+            }
+            if (b > c && b > a)
+            {
+                Console.WriteLine("\n{0} is the greatest!", b);
+            }
+            if (c > a && c > b)
+            {
+                Console.WriteLine("\n{0} is the greatest!", c);
+            }
+        }
+
+        public void RepeatUntilSomeoneEntersZero()
+        {
+            int a = 0;
+            Console.Write("Enter a number: ");
+            a = Convert.ToInt32(Console.ReadLine());
+
+            while (a != 0)
+            {
+                Console.WriteLine(10 * a);
+
+                Console.Write("\nEnter a number: ");
+                a = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+
+        public void RepeatUntilSomeoneEntersZeroPartTwo()
+        {
+            int a = 0;
+            Console.Write("Enter a number: ");
+            a = Convert.ToInt32(Console.ReadLine());
+
+            do
+            {
+                Console.WriteLine(10 * a);
+
+                Console.Write("\nEnter a number: ");
+                a = Convert.ToInt32(Console.ReadLine());
+            } while (a != 0);
+        }
+
+        public void Counter()
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine(++i);
+            }
+        }
+
+        public void TimesTable()
+        {
+            int a = 0;
+            int b = 1;
+            Console.Write("Enter a number: ");
+            a = Convert.ToInt32(Console.ReadLine());
+
+            while (b <= 10)
+            {
+                Console.WriteLine("{0} * {1} = {2}", a, b, a * b);
+                b++;
+            }
+        }
+
+        public void OddNumbersDescending()
+        {
+            int a = 15;
+
+            while (a >= 7)
+            {
+                Console.WriteLine(a);
+                a = a - 2;
+            }
+        }
+
+        public void DisplaySum()
+        {
+            int a = 0;
+            int sum = 0;
+
+            do
+            {
+                Console.Write("\nNumber? ");
+                a = Convert.ToInt32(Console.ReadLine());
+                if (a != 0)
+                {
+                    sum = sum + a;
+                    Console.WriteLine("Total = {0}", sum);
+                }
+            } while (a != 0);
+
+            Console.WriteLine("\nFinished!");
+        }
+    #endregion
+}
 }
